@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import Product from '../Product/Product'
 import './allproduct.scss'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 function AllProduct() {
     const products = useSelector(state=>state.products[0])
@@ -23,12 +23,12 @@ function AllProduct() {
   return (
     <div className='products-div'>
         <nav>
-            <button className='btn' onClick={e=>filterItem('All')}>All</button>
-            <button className='btn' onClick={e=>filterItem(categories.Clothes)}>Clothes</button>
-            <button className='btn' onClick={e=>filterItem(categories.Electronics)}>Electronics</button>
-            <button className='btn' onClick={e=>filterItem(categories.Furniture)}>Furniture</button>
-            <button className='btn' onClick={e=>filterItem(categories.Shoes)}>Shoes</button>
-            <button className='btn' onClick={e=>filterItem(categories.Miscellaneous)}>Miscellaneous</button>
+            <NavLink onClick={e=>filterItem('All')}>All</NavLink>
+            <NavLink onClick={e=>filterItem(categories.Clothes)}>Clothes</NavLink>
+            <NavLink onClick={e=>filterItem(categories.Electronics)}>Electronics</NavLink>
+            <NavLink onClick={e=>filterItem(categories.Furniture)}>Furniture</NavLink>
+            <NavLink onClick={e=>filterItem(categories.Shoes)}>Shoes</NavLink>
+            <NavLink onClick={e=>filterItem(categories.Miscellaneous)}>Miscellaneous</NavLink>
         </nav>
         <div className='all-products'>
             {

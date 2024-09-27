@@ -1,6 +1,28 @@
 @import '../../variable';
 
 .products-div{
+    padding-top: 100px;
+
+    nav{
+        text-align: center;
+        background-color: $banner-bg-color;
+        padding: 20px;
+
+        a{
+            color: white;
+            font-family: sans-serif;
+            font-weight: 600;
+            text-decoration: none;
+            margin: 0 15px;
+            padding:10px;
+            &:hover{
+                color: black;
+            }
+            &.active{
+                background-color: red;
+            }
+        }
+    }
     .all-products{
         padding: 50px 0;
         display: grid;
