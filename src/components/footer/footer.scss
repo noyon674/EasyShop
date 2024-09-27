@@ -1,0 +1,83 @@
+@import '../../variable';
+
+.footer-div{
+    background-color: #222;
+    padding: 50px;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .left{
+        nav{
+            margin-bottom: 40px;
+            a{
+                color: white;
+                text-decoration: none;
+                margin: 0 10px;
+                font-weight: 600;
+                font-family: sans-serif;
+                color: white;
+                text-transform: uppercase;
+                &:hover{
+                    color: $banner-bg-color;
+                }
+                &.active{
+                    color: $banner-bg-color;
+                }
+            }
+        }
+        .social-icon{
+            a{
+                svg{
+                    color: $banner-bg-color;
+                    margin: 0 10px;
+                    font-size: 25px;
+                    &:hover{
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+
+    .middle{
+        p{
+            margin: 0;
+            color: #999;
+            margin-top: 5px;
+            svg{
+                margin-right: 10px;
+                font-size: 17px;
+            }
+        }
+        address{
+            color: #999;
+            margin-top: 5px;
+        }
+    }
+
+    .right{
+        input{
+            border: none;
+            outline: none;
+            height: 40px;
+            width: 300px;
+            margin-right: 10px;
+            border-radius: 5px;
+            padding: 0 10px;
+        }
+        .btn{
+            color: white;
+            font-family: sans-serif;
+            font-weight: 600;
+            border: 1px solid $banner-bg-color;
+            color: $banner-bg-color;
+            border-radius: 0;
+            &:hover{
+                background-color: $banner-bg-color;
+                color: white;
+            }
+        }
+    }
+}

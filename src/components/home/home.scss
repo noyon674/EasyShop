@@ -1,0 +1,169 @@
+@import '../../variable';
+
+.home-comp{
+    .banner{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+
+        .left{
+            height: 500px;
+            background-color: $banner-bg-color;
+            align-items: center;
+            padding: 120px 100px;
+
+            h1{
+                font-size: 70px;
+                color: $banner-txt-color;
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+
+            button{
+                border: 1px solid white;
+                color: $button-primary-color;
+                padding: 5px 20px;
+                font-weight: 600;
+                border-radius: 0;
+                font-family: sans-serif;
+                text-transform: uppercase;
+                margin-top: 30px;
+                &:hover{
+                    background-color: white;
+                    color: $banner-bg-color;
+                }
+            }
+        }
+
+        .right{
+            height: 500px;
+            background-image: url('../../img/panjabi.webp');
+            background-position: top;
+            background-size: cover;
+        }
+    }
+
+    .sample-product{
+        padding: 20px 0;
+        p{
+            text-align: center;
+            font-size: 20px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin: 0;
+        }
+        .arrow{
+            text-align: center;
+            svg{
+                font-size: 30px;
+                color: $banner-bg-color;
+                animation: arrowBlink 1s infinite;
+                cursor: pointer;
+            }
+            @keyframes arrowBlink {
+                100%{
+                    opacity: 0;
+                }
+            }
+        }
+        .showMore{
+            text-align: center;
+            button{
+                margin: 40px 0;
+                background-color: $banner-bg-color;
+                color: $button-primary-color;
+                font-weight: 600;
+                font-family: sans-serif;
+                text-transform: uppercase;
+                padding: 7px 20px;
+                border: 2px solid $banner-bg-color;
+
+                &:hover{
+                    background-color: transparent;
+                    color: $banner-bg-color;
+                }
+            }
+        }
+    }
+
+    .sample-product{
+
+        .showable-product{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            align-items: center;
+            grid-row-gap: 50px;
+        }
+    }
+
+    .company-details{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        align-items: center;
+        padding: 50px 0;
+
+        .box{
+            display: grid;
+            grid-template-columns: .8fr 1.2fr;
+            align-items: center;
+            padding: 50px 20px;
+            &:nth-child(odd){
+                background-color: $box-bg-color;
+            }
+            .box-icon{
+                img{
+                    width: 40%;
+                    margin-left: 30px;
+                }
+            }
+
+            .box-text{
+                h2{
+                    text-transform: uppercase;
+                    color: $banner-bg-color;
+                    font-family: sans-serif;
+                    font-weight: 600;
+                }
+
+                p{
+                    font-size: 20px;
+                    margin:0;
+                    color: #555;
+                }
+            }
+        }
+    }
+
+    .social-icons{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 100px 0;
+
+        h5{
+            font-family: sans-serif;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: $banner-bg-color;
+        }
+        span{
+            height: 3px;
+            width: 50px;
+            background-color: black;
+            margin: 0 20px;
+            margin-bottom: 10px;
+        }
+
+        svg{
+            font-size: 25px;
+            margin: 0 10px;
+            color: #333;
+            margin-bottom: 10px;
+            &:hover{
+                color: $banner-bg-color;
+                cursor: pointer;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,25 @@
+@import '../../variable';
+
+.card{
+    transition: .2s ease-in-out;
+    .card-body{
+        p{
+            text-align: left;
+            font-size: 30px;
+            color: black;
+        }
+        .btn{
+            width: 100%;
+            background-color: $banner-bg-color;
+            color: white;
+            font-weight: 600;
+            font-family: sans-serif;
+            &:hover{
+                background-color: rgba($color: $banner-bg-color, $alpha: .8);
+            }
+        }
+    }
+    &:hover{
+        margin-top: -50px;
+    }
+}
