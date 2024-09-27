@@ -4,10 +4,10 @@ import './product.scss'
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import { FaSearch } from "react-icons/fa";
+import { useSelector } from 'react-redux';
 
 function Product(props) {
-    console.log(props)
-    const {title, images, price} = props
+    const {title, images, price, category} = props
   return (
     <Card style={{ width: '18rem' }}>
       <Link>

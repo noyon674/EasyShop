@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import './home.scss';
-import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowDown } from "react-icons/io";
 import axios from 'axios';
-import Product from '../Products/Product';
+import Product from '../Product/Product';
 import Icon1 from '../../img/delivery-icon.svg'
 import Icon2 from '../../img/gift_card.svg'
 import Icon3 from '../../img/returns.svg'
 import { FaFacebook, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 import { FiInstagram } from "react-icons/fi";
+import { useDispatch } from 'react-redux';
+import { storeProducts } from '../../redux/action/action';
 
 function Home() {
   const [products, setProducts] = useState([]);
+  const dispatch = useDispatch();
 
   useEffect(()=>{
     const fetchProduct = async()=>{
@@ -19,6 +22,7 @@ function Home() {
         const data = response.data;
         if(data){
           setProducts(data)
+          dispatch(storeProducts(data))
         }
       } catch (error) {
         
