@@ -10,6 +10,7 @@ import { FaFacebook, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 import { FiInstagram } from "react-icons/fi";
 import { useDispatch } from 'react-redux';
 import { storeProducts } from '../../redux/action/action';
+import { Link } from 'react-router-dom';
 
 function Home() {
   const [products, setProducts] = useState([]);
@@ -57,9 +58,9 @@ function Home() {
           }
         </div>
         <div className='showMore'>
-          <button className='btn showMore'>
+          <Link className='btn showMore' to='/products'>
             shop all
-          </button>
+          </Link>
         </div>
       </div>
       <div className="company-details">

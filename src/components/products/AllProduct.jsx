@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import Product from '../Product/Product'
 import './allproduct.scss'
-import { NavLink } from 'react-router-dom'
 
 function AllProduct() {
     const products = useSelector(state=>state.products[0])
@@ -19,27 +18,26 @@ function AllProduct() {
     const filterItem = (category)=>{
         setCategory(category)
     }
-    console.log(category)
   return (
     <div className='products-div'>
         <nav>
             <button 
-            className={category == 'All' && 'active'} 
+            className={category == 'All' ? 'active': null} 
             onClick={e=>filterItem('All')}>All</button>
             <button 
-            className={category == categories.Clothes && 'active'} 
+            className={category == categories.Clothes ? 'active': null} 
             onClick={e=>filterItem(categories.Clothes)}>Clothes</button>
             <button 
-            className={category == categories.Electronics && 'active'} 
+            className={category == categories.Electronics ? 'active': null} 
             onClick={e=>filterItem(categories.Electronics)}>Electronics</button>
             <button 
-            className={category == categories.Furniture && 'active'} 
+            className={category == categories.Furniture ? 'active': null} 
             onClick={e=>filterItem(categories.Furniture)}>Furniture</button>
             <button 
-            className={category == categories.Shoes && 'active'} 
+            className={category == categories.Shoes ? 'active': null} 
             onClick={e=>filterItem(categories.Shoes)}>Shoes</button>
             <button 
-            className={category == categories.Miscellaneous && 'active'} 
+            className={category == categories.Miscellaneous ? 'active': null} 
             onClick={e=>filterItem(categories.Miscellaneous)}>Miscellaneous</button>
         </nav>
         <div className='all-products'>
