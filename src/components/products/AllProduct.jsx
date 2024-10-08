@@ -23,12 +23,24 @@ function AllProduct() {
   return (
     <div className='products-div'>
         <nav>
-            <NavLink onClick={e=>filterItem('All')}>All</NavLink>
-            <NavLink onClick={e=>filterItem(categories.Clothes)}>Clothes</NavLink>
-            <NavLink onClick={e=>filterItem(categories.Electronics)}>Electronics</NavLink>
-            <NavLink onClick={e=>filterItem(categories.Furniture)}>Furniture</NavLink>
-            <NavLink onClick={e=>filterItem(categories.Shoes)}>Shoes</NavLink>
-            <NavLink onClick={e=>filterItem(categories.Miscellaneous)}>Miscellaneous</NavLink>
+            <button 
+            className={category == 'All' && 'active'} 
+            onClick={e=>filterItem('All')}>All</button>
+            <button 
+            className={category == categories.Clothes && 'active'} 
+            onClick={e=>filterItem(categories.Clothes)}>Clothes</button>
+            <button 
+            className={category == categories.Electronics && 'active'} 
+            onClick={e=>filterItem(categories.Electronics)}>Electronics</button>
+            <button 
+            className={category == categories.Furniture && 'active'} 
+            onClick={e=>filterItem(categories.Furniture)}>Furniture</button>
+            <button 
+            className={category == categories.Shoes && 'active'} 
+            onClick={e=>filterItem(categories.Shoes)}>Shoes</button>
+            <button 
+            className={category == categories.Miscellaneous && 'active'} 
+            onClick={e=>filterItem(categories.Miscellaneous)}>Miscellaneous</button>
         </nav>
         <div className='all-products'>
             {

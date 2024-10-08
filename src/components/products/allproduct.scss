@@ -7,19 +7,18 @@
         text-align: center;
         background-color: $banner-bg-color;
         padding: 20px;
-
-        a{
-            color: white;
+        button{
+            background: none;
+            border: none;
             font-family: sans-serif;
             font-weight: 600;
-            text-decoration: none;
-            margin: 0 15px;
-            padding:10px;
+            margin: 0 10px;
+            color: wheat;
             &:hover{
                 color: black;
             }
             &.active{
-                background-color: red;
+                color: black;
             }
         }
     }
