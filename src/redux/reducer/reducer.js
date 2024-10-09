@@ -1,4 +1,4 @@
-import { STOREPRODUCTS } from "../type/type"
+import { ADDTOCART, RESETCART, STOREPRODUCTS } from "../type/type"
 
 const initialState = {
     isAuthenticated: false,
@@ -11,6 +11,14 @@ const reducer = (state = initialState, action)=>{
         case STOREPRODUCTS: return{
             ...state,
             products: [...state.products, action.payload]
+        }
+        case ADDTOCART: return{
+            ...state,
+            cart: [...state.cart, action.payload]
+        }
+        case RESETCART: return{
+            ...state,
+            cart: []
         }
         default: return state
     }

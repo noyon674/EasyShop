@@ -4,12 +4,19 @@ import './product.scss'
 import Card from 'react-bootstrap/Card';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaSearch } from "react-icons/fa";
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { addTOCart } from '../../redux/action/action';
 
 function Product(props) {
+  const cartList = useSelector(state=>state.cart)
+  const dispatch = useDispatch()
   const navigate = useNavigate();
-  const isAuth = false;
+  const isAuth = true;
   const {title, images, price, id} = props
+  console.log(cartList)
+  const isInCart = cartList && cartList.some(cart=>cart.id == id)
+  console.log(isInCart)
+
   return (
     <Card style={{ width: '18rem' }}>
       <Link 
@@ -23,8 +30,9 @@ function Product(props) {
         <p>${price}</p>
         <button 
         className='btn'
-        onClick={e=>isAuth ? console.log('added'): navigate('/login')}
-        >Add to cart</button>
+        disabled={isInCart ? true : false}
+        onClick={e=>isAuth ? dispatch(addTOCart(props)): navigate('/login')}
+        >{isInCart ? 'Added to Cart' : 'Add to cart'}</button>
       </Card.Body>
     </Card>
   )

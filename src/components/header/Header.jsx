@@ -4,10 +4,10 @@ import './header.scss';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../img/logo.png';
 import { RiShoppingBagLine } from 'react-icons/ri';
+import { useSelector } from 'react-redux';
 
 function Header() {
-  const count = 0;
-
+  const cartList = useSelector(state=>state.cart)
   return (
     <div className="header-comp">
       <div className="left">
@@ -35,7 +35,7 @@ function Header() {
           <span>
             <RiShoppingBagLine />
           </span>
-          <span>{count}</span>
+          <span>{cartList.length}</span>
         </Link>
       </div>
     </div>

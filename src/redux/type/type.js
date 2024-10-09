@@ -1,1 +1,3 @@
 export const STOREPRODUCTS = 'STOREPRODUCTS'
+export const ADDTOCART = 'ADDTOCART'
+export const RESETCART = 'RESETCART'
