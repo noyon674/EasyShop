@@ -1,4 +1,4 @@
-import { ADDTOCART, RESETCART, STOREPRODUCTS } from "../type/type"
+import { ADDTOCART, DECREASEITEM, DELETEITEM, INCREASEITEM, RESETCART, STOREPRODUCTS } from "../type/type"
 
 const initialState = {
     isAuthenticated: false,
@@ -14,11 +14,27 @@ const reducer = (state = initialState, action)=>{
         }
         case ADDTOCART: return{
             ...state,
-            cart: [...state.cart, action.payload]
+            cart: [...state.cart, {...action.payload, quantity: 1, totalPrice: action.payload.price}]
         }
         case RESETCART: return{
             ...state,
             cart: []
+        }
+        case INCREASEITEM: return{
+            ...state,
+            cart: state.cart.map(cartItem=>(
+                cartItem.id === action.payload ? {...cartItem, quantity: cartItem.quantity + 1, totalPrice: cartItem.price * (cartItem.quantity+1)} : {...cartItem}
+            ))
+        }
+        case DECREASEITEM: return{
+            ...state,
+            cart: state.cart.map(cartItem=>(
+                cartItem.id === action.payload ? {...cartItem, quantity: cartItem.quantity - 1, totalPrice: cartItem.price * (cartItem.quantity-1)} : {...cartItem}
+            ))
+        }
+        case DELETEITEM: return{
+            ...state,
+            cart: state.cart.filter(cartItem=> cartItem.id !== action.payload)
         }
         default: return state
     }

@@ -4,9 +4,11 @@ import './header.scss';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../img/logo.png';
 import { RiShoppingBagLine } from 'react-icons/ri';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { resetCart } from '../../redux/action/action';
 
 function Header() {
+  const dispatch = useDispatch()
   const cartList = useSelector(state=>state.cart)
   return (
     <div className="header-comp">
@@ -31,12 +33,13 @@ function Header() {
           <span> / </span>
           <Link>Register</Link>
         </div>
-        <Link className="cart">
+        <Link className="cart" to='/cart'>
           <span>
             <RiShoppingBagLine />
           </span>
           <span>{cartList.length}</span>
         </Link>
+        {/* <a onClick={e=>dispatch(resetCart())} href="">Reset</a> */}
       </div>
     </div>
   );

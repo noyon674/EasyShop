@@ -15,7 +15,6 @@ function Product(props) {
   const {title, images, price, id} = props
   console.log(cartList)
   const isInCart = cartList && cartList.some(cart=>cart.id == id)
-  console.log(isInCart)
 
   return (
     <Card style={{ width: '18rem' }}>

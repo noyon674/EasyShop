@@ -10,6 +10,7 @@ import Footer from './components/footer/Footer';
 import Products from './components/products/AllProduct';
 import ProductDetails from './components/productDetails/ProductDetails';
 import Login from './components/login/Login';
+import CartBox from './components/cart/CartBox';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path='/login' element={<Login />}/>
+          <Route path='/cart' element={<CartBox />}/>
         </Routes>
       </div>
       <Footer />
